@@ -1,0 +1,7 @@
+*.csv
+*.zip
+*.txt
+.conda/
+scratch*
+ChemBert.egg-info/
+ChemBert/__pycache__
