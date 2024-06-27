@@ -1,7 +1,3 @@
-import logging
-logging.getLogger().setLevel(logging.ERROR)
-import warnings
-warnings.filterwarnings("ignore")
 from torch import optim
 import torch
 from torch.utils.tensorboard import SummaryWriter
