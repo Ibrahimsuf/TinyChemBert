@@ -1,7 +1,7 @@
-*.csv
-*.zip
-*.txt
+data/
 .conda/
-scratch*
+scratch/
 ChemBert.egg-info/
 ChemBert/__pycache__
+runs/*
+models

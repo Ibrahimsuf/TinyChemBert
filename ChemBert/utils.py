@@ -48,6 +48,6 @@ def split_train_test_val(examples_file: str, train_file: str, test_file: str, va
 def get_data_loader(file:str, batch_size:Optional[int] = 32, mlm_probability:Optional[float] = 0.15) -> DataLoader:
   dataset = load_dataset('text', data_files=file, streaming=True)["train"]
   tokenized_dataset = dataset.map(lambda x: tokenizer(x["text"], return_special_tokens_mask=True), remove_columns=["text"])
-  tokenizer = SmilesTokenizer("small_vocab.txt")
+  tokenizer = SmilesTokenizer("data/small_vocab.txt")
   data_collator = DataCollatorForLanguageModeling(tokenizer=tokenizer, mlm_probability=mlm_probability, return_tensors="pt")
   return DataLoader(tokenized_dataset, collate_fn=data_collator, batch_size=batch_size), tokenizer
