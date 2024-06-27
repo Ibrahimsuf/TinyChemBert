@@ -14,7 +14,6 @@ from tqdm import tqdm
 MODEL = "roneneldan/TinyStories-1M"
 def train(train_directory: str, val_directory: str, save_directory: str, num_epochs: Optional[int] = 10, tensorboard_logdir: Optional[str] = None, checkpoint: Optional[str] = None) -> None:
   """Train the model"""
-  print("Num epochs:", num_epochs)
   if checkpoint is None:
     config = AutoConfig.from_pretrained(MODEL, use_cache=False)
     model = AutoModelForCausalLM.from_config(config=config)
